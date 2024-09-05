@@ -15,6 +15,7 @@ sentiment_analyzer_url = os.getenv(
 import requests
 from urllib.parse import urlencode
 
+
 def get_request(endpoint, **kwargs):
     try:
         # Encode the parameters safely
@@ -51,6 +52,7 @@ def analyze_review_sentiments(text):
         print(f"Unexpected {err=}, {type(err)=}")
         print("Network exception occurred")
 
+
 def post_review(data_dict):
     request_url = backend_url+"/insert_review"
     try:
@@ -59,4 +61,4 @@ def post_review(data_dict):
         return response.json()
     except:
         print("Network exception occurred")
-# Add code for posting review
+
